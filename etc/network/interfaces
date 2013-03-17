@@ -1,0 +1,13 @@
+auto lo
+
+iface lo inet loopback
+
+iface eth0 inet dhcp
+    dns-nameservers 192.168.1.1
+    post-up /etc/network/scripts/eth0_add_route
+
+allow-hotplug wlan0
+iface wlan0 inet manual
+    dns-nameservers 8.8.8.8
+    wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
+iface default inet dhcp
