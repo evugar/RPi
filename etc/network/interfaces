@@ -2,9 +2,9 @@ auto lo
 
 iface lo inet loopback
 
-iface eth0 inet dhcp
-    dns-nameservers 192.168.1.1
-    post-up /etc/network/scripts/eth0_add_route
+iface eth0 inet static
+    address 192.168.2.101
+    netmask 255.255.255.0
 
 allow-hotplug wlan0
 iface wlan0 inet manual
